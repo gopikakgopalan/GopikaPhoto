@@ -1,0 +1,34 @@
+/* 1. CSS Custom Properties / Variables */
+:root {
+  --color-bg: #fdfbf7;          /* Warm cream background */
+  --color-surface: #f4eee1;     /* Slightly darker cream for cards/sections */
+  --color-text: #2c221e;        /* Deep rich brown for readability */
+  --color-text-muted: #6e5d53;  /* Softer warm brown for secondary copy */
+  --color-accent: #c59b27;      /* Warm golden accent */
+  --color-accent-hover: #a37f1e;/* Darker gold for interactive states */
+  --color-border: #e3d8c8;      /* Soft warm border */
+  
+  --font-base: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* 2. Global Border-Box Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 3. Base Body Reset */
+body {
+  margin: 0;
+  font-family: var(--font-base);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* 4. Responsive Image Baseline */
+img {
+  max-width: 100%;
+  display: block;
+}
