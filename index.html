@@ -73,29 +73,53 @@
             <h2>About My Work</h2>
             <p>Gops PhotoGraphy is a wedding and event photography service that specializes in capturing candid moments, raw emotions, and timeless memories. With a keen eye for detail and a passion for storytelling, we strive to create stunning visual narratives that reflect the unique essence of each event. We believe the most breathtaking photographs are the ones you didn't know were being taken. Based between cities and celebrations worldwide, our approach blends editorial composition with unscripted intimacy. From quiet glances to wild dance floors, we document your vows as they truly unfolded.</p>
         </section>
-<!-- Contact Section -->
-        <section id="contact" class="contact">
-            <h2>Book a Shoot</h2>
-            <form action="#" method="POST">
-                <div>
-                    <label for="name">Your Name : </label>
-                    <input type="text" id="name" name="name" placeholder="Eg: Gopika Gopalan" required>
-                </div>
-                <div>
-                    <label for="email">Email : </label>
-                    <input type="email" id="email" name="email" placeholder="Eg: gopikagopalan@gmail.com" required>
-                </div>
-                <div>
-                    <label for="wedding-date">Wedding Date : </label>
-                    <input type="date" id="wedding-date" name="wedding-date" placeholder="Eg: 2023-12-25" required>
-                </div>
-                <div>
-                    <label for="message">Message : </label>
-                    <textarea id="message" name="message" rows="5" placeholder="Tell me about your venue, plans, and vision..." required></textarea>
-                </div>  
-                <button type="submit">Submit</button>
-            </form>
-        </section>
+<!-- ================= CONTACT / BOOKING SECTION ================= -->
+<section id="contact" class="inquiry-section">
+  <!-- Top Intro & Contact Details -->
+  <div class="inquiry-header">
+    <p class="inquiry-intro-italic">
+      Want to make us a part of your celebration? Fill the form below with your details and we will get back to you as soon as we can. We take up very limited weddings per year so please provide as much details as you can like – dates, venues, ceremonies, wedding theme and a few lines about your story.
+    </p>
+    
+    
+  </div>
+
+  <!-- Form Container -->
+  <div class="form-wrapper">
+    <h2>Please complete the form below</h2>
+    
+    <form action="#" method="POST" class="inquiry-form" onsubmit="event.preventDefault();">
+      <div class="form-field">
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="name" placeholder="Name" required />
+      </div>
+
+      <div class="form-field">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" placeholder="Email Address *" required />
+      </div>
+
+      <div class="form-field">
+        <label for="event-details">Event Details (Please Mention The Dates So We Can Check Availability) *</label>
+        <textarea id="event-details" name="event-details" rows="5" placeholder="Event Details (Please Mention The Dates So We Can Check Availability) *" required></textarea>
+      </div>
+
+      <div class="form-field">
+        <label for="venue">Venue *</label>
+        <input type="text" id="venue" name="venue" placeholder="Venue *" required />
+      </div>
+
+      <div class="form-field">
+        <label for="phone">Contact Number *</label>
+        <input type="tel" id="phone" name="phone" placeholder="Contact Number *" required />
+      </div>
+
+      <div class="form-submit-row">
+        <button type="submit" class="inquiry-submit-btn">Request A Quote</button>
+      </div>
+    </form>
+  </div>
+</section>
     </main>
     <footer>
         <p>&copy; 2026 Gops PhotoGraphy. All rights reserved.</p>
