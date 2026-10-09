@@ -174,3 +174,51 @@ nav a:hover {
   line-height: 1.8;
 }
 
+/* ================= CONTACT FORM ================= */
+#contact {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+#contact h2 {
+  text-align: center;
+  color: var(--color-text);
+  margin-bottom: 2rem;
+}
+
+#contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+#contact form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+#contact label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+#contact input,
+#contact textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--color-border);
+  background-color: #fff;
+  color: var(--color-text);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
