@@ -116,3 +116,41 @@ nav a:hover {
   background-color: var(--color-accent-hover);
   transform: translateY(-1px);
 }
+
+/* ================= GALLERY (CSS GRID CENTERPIECE) ================= */
+#gallery {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#gallery h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--color-text);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+/* Reset default browser margin on figure tags */
+.gallery-grid figure {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+/* Responsive aspect-ratio + object-fit: cover */
+.gallery-grid img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+}
