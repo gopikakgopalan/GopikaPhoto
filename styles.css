@@ -35,20 +35,26 @@ img {
 
 /* ================= HEADER & NAVIGATION (FLEXBOX) ================= */
 header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.25rem 2rem;
-  background-color: var(--color-bg);
-  border-bottom: 1px solid var(--color-border);
+  padding: 1.5rem 3rem;
+  background-color: rgba(255, 255, 255, 0.4); /* subtle light overlay like the reference */
+  backdrop-filter: blur(4px);
+  z-index: 20;
 }
 
 .site-name {
-  font-weight: 600;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #222222;
   text-decoration: none;
-  color: var(--color-text);
-  font-size: 1.25rem;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.02em;
 }
 
 nav ul {
@@ -61,60 +67,83 @@ nav ul {
 }
 
 nav a {
+  font-family: "Montserrat", sans-serif;
   text-decoration: none;
-  color: var(--color-text);
+  color: #2b2b2b;
+  font-size: 0.78rem;
   font-weight: 500;
-  transition: color 0.2s ease;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease;
 }
 
 nav a:hover {
-  color: var(--color-accent);
+  opacity: 0.6;
 }
 
 
-/* ================= HERO SECTION (FLEXBOX CENTERING) ================= */
+/* ================= FULL SCREENHERO SECTION (FLEXBOX CENTERING) ================= */
 #hero {
-  min-height: 70vh;
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Exactly 100% of viewport height */
+  margin: 0;
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 2rem 1.5rem;
-  background-color: var(--color-surface);
-  border-bottom: 1px solid var(--color-border);
+  padding: 0 1.5rem;
+
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.12)),
+    url("images/backgroundpic.PNG") right top / cover no-repeat;
 }
 
 #hero h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  color: var(--color-text);
-  margin: 0 0 1rem 0;
-  line-height: 1.2;
+ font-family: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(3.8rem, 9vw, 7.5rem); /* Giant editorial type */
+  font-weight: 400;
+  line-height: 1.05;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  margin: 0 0 1.25rem 0;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.35); /* Soft drop shadow for legibility over dunes */
 }
 
+
 #hero p {
-  font-size: 1.15rem;
-  color: var(--color-text-muted);
-  max-width: 600px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.95);
+  max-width: 520px;
+  line-height: 1.6;
   margin: 0 0 2rem 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 /* "Book a shoot" link styled as a button */
 .hero-btn {
   display: inline-block;
   background-color: var(--color-accent);
-  color: var(--color-bg);
-  padding: 0.85rem 2rem;
+  color: #f7efef;
+  padding: 0.85rem 2.2rem;
   text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
   font-weight: 600;
-  letter-spacing: 0.05em;
-  border-radius: 4px;
-  transition: background-color 0.2s ease, transform 0.1s ease;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  box-shadow: 0 4px 12px rgba(247, 246, 246, 0.15);
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .hero-btn:hover {
-  background-color: var(--color-accent-hover);
-  transform: translateY(-1px);
+  background-color: #f3f1f1;
+  transform: translateY(-2px);
 }
 
 /* ================= GALLERY (CSS GRID CENTERPIECE) ================= */
