@@ -19,8 +19,17 @@
 }
 
 /* 3. Base Body Reset */
+html,
 body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* Guards against horizontal scrolling */
   margin: 0;
+  padding: 0;
+}
+
+/* 3. Base Body Reset */
+body {
   font-family: var(--font-base);
   background-color: var(--color-bg);
   color: var(--color-text);
@@ -38,7 +47,8 @@ header {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  right: 0;
+  width: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -352,6 +362,8 @@ nav a:hover {
   border-top: 1px solid #dfd8ce;
   padding: 5rem 6vw 4rem; /* Wide responsive padding instead of narrow container */
   width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .footer-grid {
@@ -374,7 +386,7 @@ nav a:hover {
   font-size: clamp(2rem, 3.8vw, 3.4rem);
   font-weight: 400;
   color: #1a1a1a;
-  white-space: nowrap; /* Forces "Discover, Share, Connect" to stay on ONE line */
+  white-space: normal; /* Forces "Discover, Share, Connect" to stay on ONE line */
   margin: 0 0 3.5rem 0; /* Creates generous open breathing room above links */
   letter-spacing: -0.01em;
 }
@@ -457,5 +469,19 @@ nav a:hover {
   .footer-grid {
     flex-direction: column;
     gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 1.25rem 1rem;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  nav ul {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
