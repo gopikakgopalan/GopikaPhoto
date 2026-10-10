@@ -296,6 +296,20 @@ nav a:hover {
   text-align: center;
 }
 
+.about-split {
+  background-color: var(--color-bg, #fdfbf7); 
+  padding: 6rem 2rem;
+  border-top: 1px solid var(--color-border, #e3d8c8);
+}
+
+.about-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center; /* Centers text vertically against the portrait */
+  gap: 5rem;          /* Generous editorial breathing room */
+}
+
 #about h2 {
   font-family: "Playfair Display", Georgia, serif;
   font-size: clamp(1.6rem, 3vw, 2.2rem);
@@ -304,13 +318,66 @@ nav a:hover {
   margin-bottom: 1.5rem;
 }
 
-#about p {
+.about-image {
+  flex: 0 0 38%; /* Locks image to a refined 38% width */
+  max-width: 420px;
+}
+
+.about-image img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.about-content {
+  flex: 1;
+}
+
+.about-eyebrow {
+  display: block;
   font-family: "Montserrat", sans-serif;
-  font-weight: 300;                /* Ultra-light refined weight */
-  font-size: 0.95rem;
-  line-height: 2;                  /* Generous breathing room */
-  letter-spacing: 0.04em;          /* Subtle tracking */
-  color: #635d55;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-accent, #c59b27);
+  margin-bottom: 0.85rem;
+}
+
+.about-content h2 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1rem, 3.2vw, 2.75rem);
+  font-weight: 400;
+  line-height: 1.25;
+  color: #1a1a1a;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.5rem 0;
+}
+
+#about content p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 300;
+  line-height: 1.95;
+  letter-spacing: 0.025em;
+  color: #55504a;
+  max-width: 580px;
+  margin:0;
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    gap: 2.5rem;
+    text-align: center;
+  }
+  .about-content {
+    text-align: center;
+  }
+  .about-content p {
+    margin: 0 auto;
+  }
 }
 
 /* ================= INQUIRY / CONTACT SECTION STYLING ================= */
