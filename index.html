@@ -116,27 +116,27 @@
     <form action="#" method="POST" class="inquiry-form" onsubmit="event.preventDefault();">
       <div class="form-field">
         <label for="name">Name *</label>
-        <input type="text" id="name" name="name" placeholder="Name" required />
+        <input type="text" id="name" name="name" placeholder="Name" autocomplete="name" required />
       </div>
 
       <div class="form-field">
         <label for="email">Email Address *</label>
-        <input type="email" id="email" name="email" placeholder="Email Address *" required />
+        <input type="email" id="email" name="email" placeholder="Email Address *" autocomplete="email" required />
       </div>
 
       <div class="form-field">
         <label for="event-details">Event Details (Please Mention The Dates So We Can Check Availability) *</label>
-        <textarea id="event-details" name="event-details" rows="5" placeholder="Event Details (Please Mention The Dates So We Can Check Availability) *" required></textarea>
+        <textarea id="event-details" name="event-details" rows="5" placeholder="Event Details (Please Mention The Dates So We Can Check Availability) *" autocomplete="off" required></textarea>
       </div>
 
       <div class="form-field">
         <label for="venue">Venue *</label>
-        <input type="text" id="venue" name="venue" placeholder="Venue *" required />
+        <input type="text" id="venue" name="venue" placeholder="Venue *" autocomplete="address-level2" required />
       </div>
 
       <div class="form-field">
         <label for="phone">Contact Number *</label>
-        <input type="tel" id="phone" name="phone" placeholder="Contact Number *" required />
+        <input type="tel" id="phone" name="phone" placeholder="Contact Number *" autocomplete="tel" required />
       </div>
 
       <div class="form-submit-row">
