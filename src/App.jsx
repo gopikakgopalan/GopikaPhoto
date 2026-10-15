@@ -4,6 +4,7 @@ import Hero from './components/Hero'
 import About from './components/About'
 import Gallery from './components/Gallery'
 import Inquiry from './components/Inquiry'
+import Footer from './components/Footer'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,6 +16,7 @@ function App() {
       <About />
       <Gallery />
       <Inquiry />
+      <Footer />
       </div>
   )
 }
