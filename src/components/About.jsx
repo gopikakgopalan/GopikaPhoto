@@ -6,7 +6,7 @@ export default function About() {
           src="/images/About1.PNG"
           alt="Photographer behind the lens"
           loading="lazy"
-          className="aspect-[4/5] w-full rounded-sm object-cover shadow-lg md:w-2/5 md:max-w-[460px]"
+          className="mx-auto aspect-[4/5] w-full max-w-sm rounded-sm object-cover shadow-lg md:mx-0 md:w-2/5 md:max-w-[460px] md:self-start"
         />
         <div className="flex-1">
           <span className="mb-4 block text-xs font-bold uppercase tracking-[0.22em] text-accent">About The Artist</span>
