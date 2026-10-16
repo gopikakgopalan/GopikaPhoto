@@ -55,7 +55,7 @@ GopsPhoto/
 
 **Filter:** `Gallery` keeps the active category in one `useState` string. The visible photos are computed from that string on every render.
 
-**Controlled component:** `LikeButton` has no state of its own. It receives `liked` and `onToggle` as props, and `Gallery` stores the liked photo ids in state.
+**Controlled comccccponent:** `LikeButton` has no state of its own. It receives `liked` and `onToggle` as props, and `Gallery` stores the liked photo ids in state.
 
 **Theme:** colours and fonts are defined once in the `@theme` block in `index.css`, so they are available as Tailwind classes such as `text-accent` and `font-serif`.
 
