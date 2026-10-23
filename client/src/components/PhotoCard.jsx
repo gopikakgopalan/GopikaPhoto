@@ -1,4 +1,5 @@
 import LikeButton from "./LikeButton";
+import { Link } from "react-router-dom";
 
 export default function PhotoCard({ item, liked, onToggleLike }) {
   return (
