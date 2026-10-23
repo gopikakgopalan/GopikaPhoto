@@ -4,7 +4,7 @@ export default function PhotoCard({ item, liked, onToggleLike }) {
   return (
     <figure className="group relative m-0 overflow-hidden rounded-sm bg-[#ede9e3]">
       <img
-        src={`/${item.image}`}
+        src={item.imageUrl}
         alt={item.alt}
         loading="lazy"
         className="aspect-[3/4] w-full object-cover transition duration-500 group-hover:scale-105"

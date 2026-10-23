@@ -1,15 +1,27 @@
-import { useState } from "react";
-import { galleryData } from "../data/gallery_data";
+import { useEffect, useState } from "react";
 import PhotoCard from "./PhotoCard";
 
-const categories = ["All", ...new Set(galleryData.map((item) => item.category))];
-
 export default function Gallery() {
+  const [photos, setPhotos] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
   const [active, setActive] = useState("All");
   const [likedIds, setLikedIds] = useState([]);
 
+  useEffect(() => {
+    fetch("/api/photos")
+      .then((res) => {
+        if (!res.ok) throw new Error("Request failed");
+        return res.json();
+      })
+      .then(setPhotos)
+      .catch(() => setError("Could not load photos. Please try again later."))
+      .finally(() => setLoading(false));
+  }, []);
+
+  const categories = ["All", ...new Set(photos.map((p) => p.category))];
   const visible =
-    active === "All" ? galleryData : galleryData.filter((item) => item.category === active);
+    active === "All" ? photos : photos.filter((p) => p.category === active);
 
   function toggleLike(id) {
     setLikedIds((prev) =>
@@ -19,7 +31,6 @@ export default function Gallery() {
 
   return (
     <section id="gallery" className="mx-auto max-w-[1400px] px-5 py-16 md:px-8 md:py-24">
-      {/* Section heading */}
       <div className="mb-8 text-center">
         <span className="mb-3 block text-xs font-bold uppercase tracking-[0.22em] text-accent">
           Portfolio
@@ -30,36 +41,41 @@ export default function Gallery() {
         <div className="mx-auto mt-5 h-px w-10 bg-[#2b2b2b]/25" />
       </div>
 
-      {/* Category filter */}
-      <div className="mb-10 flex flex-wrap justify-center gap-2">
-        {categories.map((c) => (
-          <button
-            key={c}
-            type="button"
-            onClick={() => setActive(c)}
-            aria-pressed={c === active}
-            className={`border px-4 py-2 text-xs uppercase tracking-widest transition ${
-              c === active
-                ? "border-[#111] bg-[#111] text-white"
-                : "border-[#c9c2b8] hover:border-[#111]"
-            }`}
-          >
-            {c}
-          </button>
-        ))}
-      </div>
+      {loading && <p className="text-center">Loading photos…</p>}
+      {error && <p className="text-center text-red-700">{error}</p>}
 
-      {/* Grid */}
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
-        {visible.map((item) => (
-          <PhotoCard
-            key={item.id}
-            item={item}
-            liked={likedIds.includes(item.id)}
-            onToggleLike={() => toggleLike(item.id)}
-          />
-        ))}
-      </div>
+      {!loading && !error && (
+        <>
+          <div className="mb-10 flex flex-wrap justify-center gap-2">
+            {categories.map((c) => (
+              <button
+                key={c}
+                type="button"
+                onClick={() => setActive(c)}
+                aria-pressed={c === active}
+                className={`border px-4 py-2.5 text-xs uppercase tracking-widest transition ${
+                  c === active
+                    ? "border-[#111] bg-[#111] text-white"
+                    : "border-[#c9c2b8] hover:border-[#111]"
+                }`}
+              >
+                {c}
+              </button>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+            {visible.map((item) => (
+              <PhotoCard
+                key={item.id}
+                item={item}
+                liked={likedIds.includes(item.id)}
+                onToggleLike={() => toggleLike(item.id)}
+              />
+            ))}
+          </div>
+        </>
+      )}
     </section>
   );
 }
