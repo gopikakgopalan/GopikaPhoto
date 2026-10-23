@@ -6,6 +6,7 @@ import About from "./components/About";
 import Inquiry from "./components/Inquiry";
 import Login from "./components/Login";
 import Footer from "./components/Footer";
+import PhotoDetail from "./components/PhotoDetail";
 
 function Home() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login key="signin" mode="signin" />} />
         <Route path="/signup" element={<Login key="signup" mode="signup" />} />
+        <Route path="/gallery/:slug" element={<PhotoDetail />} />
       </Routes>
       <Footer />
     </BrowserRouter>

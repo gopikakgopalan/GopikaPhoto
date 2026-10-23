@@ -3,6 +3,7 @@ import LikeButton from "./LikeButton";
 export default function PhotoCard({ item, liked, onToggleLike }) {
   return (
     <figure className="group relative m-0 overflow-hidden rounded-sm bg-[#ede9e3]">
+      <Link to={`/gallery/${item.slug}`} className="block"></Link>
       <img
         src={item.imageUrl}
         alt={item.alt}
