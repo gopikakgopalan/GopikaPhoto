@@ -1,26 +1,33 @@
-import { useState } from 'react'
-import Header from './components/Header'
-import Hero from './components/Hero'
-import About from './components/About'
-import Gallery from './components/Gallery'
-import Inquiry from './components/Inquiry'
-import Footer from './components/Footer'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import Gallery from "./components/Gallery";
+import About from "./components/About";
+import Inquiry from "./components/Inquiry";
+import Login from "./components/Login";
+import Footer from "./components/Footer";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+function Home() {
   return (
-    <div>
-      <Header />
-      <main>
+    <main>
       <Hero />
-      <About />
       <Gallery />
+      <About />
       <Inquiry />
-      </ main>
-      <Footer />
-      </div>
-  )
+    </main>
+  );
 }
 
-export default App
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login key="signin" mode="signin" />} />
+        <Route path="/signup" element={<Login key="signup" mode="signup" />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
+  );
+}
